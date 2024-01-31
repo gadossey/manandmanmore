@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `MAN AND MAN ENTERPRISE`,
-    siteUrl: `https://manandmanenterprise.com`,
+    title: `Gatsby Sydney Ecommerce Theme`,
+    siteUrl: `https://jamm.matter.design`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Improved Biomass Cooking in Africa`,
-        short_name: `MAN AND MAN ENTERPRISE `,
+        name: `Gatsby Sydney Ecommerce Theme`,
+        short_name: `Sydney`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#ffffff`,
