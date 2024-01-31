@@ -27,7 +27,6 @@ const Layout = ({ props, children, disablePaddingBottom = false }) => {
         />
       </Helmet>
 
-      <Header />
       <main
         className={`${styles.main} ${
           disablePaddingBottom === true ? styles.disablePaddingBottom : ''
