@@ -7,11 +7,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Sydney Ecommerce Theme`,
-        short_name: `Sydney`,
+        name: `MAN AND MAN ENTERPRISE`,
+        short_name: `Man and Man`,
+        description: `Improved Biomass Cooking in Africa`,
         start_url: `/`,
-        background_color: `#000000`,
-        theme_color: `#ffffff`,
+        background_color: `#00ff00`,
+        theme_color: `#663399`,
         display: `standalone`,
         icon: 'src/assets/favicon.png',
       },
