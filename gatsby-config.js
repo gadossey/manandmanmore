@@ -62,9 +62,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-smartypants`,
           },
-          {
-            resolve: `gatsby-remark-reading-time`,
-          },
+         
         ],
       },
     },
