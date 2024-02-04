@@ -15,6 +15,8 @@ import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
 
 import * as styles from './index.module.css';
 import { Link, navigate } from 'gatsby';
+import SimpleSwiper from '../containers/home/post-slider';
+import IconGrid from '../containers/profile-grid';
 
 const IndexPage = () => {
   const newArrivals = generateMockProductData(3, 'shirt');
@@ -27,7 +29,8 @@ const IndexPage = () => {
   return (
     <Layout disablePaddingBottom>
       {/* Hero Container */}
-      
+      <SimpleSwiper />
+      <IconGrid />
      
     </Layout>
   );

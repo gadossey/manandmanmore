@@ -17,14 +17,23 @@
     "plop": "plop"
   },
   "dependencies": {
+    "@mui/material": "^5.15.7",
+    "@mui/styles": "^5.15.7",
     "@netlify/plugin-gatsby": "^3.8.0",
     "cypress": "^10.0.3",
     "gatsby": "^4.5.4",
+    "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^4.14.0",
+    "gatsby-plugin-styled-components": "^6.13.1",
+    "gatsby-remark-images": "^7.13.1",
+    "gatsby-remark-responsive-iframe": "^6.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
-    "react-slick": "^0.30.0"
+    "react-icons": "^5.0.1",
+    "react-slick": "^0.30.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "gatsby-plugin-netlify": "^5.0.0",

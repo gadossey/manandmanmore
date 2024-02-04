@@ -20,6 +20,15 @@ module.exports = {
         icon: 'src/assets/favicon.png',
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        minify: false, // Breaks styles if not set to false
+      },
+    },
+    {
+      resolve: `gatsby-plugin-image`,
+    },
     'gatsby-plugin-netlify',
   ],
 };
