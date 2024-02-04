@@ -20,7 +20,7 @@ const SimpleSwiper = () => {
       </TitleWrapper>
       <ImageWrapper>
         <StaticImage
-          src="../../../content/blog/We-have-helped-save-over-two-Million/banner.png" // Replace with your image path
+          src="../../../../content/blog/We-have-helped-save-over-two-Million/banner.png" // Replace with your image path
           alt="Static Image"
           placeholder="blurred"
         />
