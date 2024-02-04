@@ -34,7 +34,6 @@
     "gatsby-remark-katex": "^7.13.1",
     "gatsby-remark-mermaid": "^4.0.0",
     "gatsby-remark-prismjs": "^7.13.1",
-    "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-remark-responsive-iframe": "^6.13.1",
     "gatsby-remark-smartypants": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
