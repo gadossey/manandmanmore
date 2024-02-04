@@ -21,7 +21,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.7",
     "@netlify/plugin-gatsby": "^3.8.0",
-    "cypress": "^10.0.3",
+    "cypress": "^13.6.4",
     "gatsby": "^5.13.3",
     "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
