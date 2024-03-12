@@ -29,7 +29,7 @@ const Header = (prop) => {
   const searchRef = createRef();
   const bannerMessage = 'Cook Stoves';
   const searchSuggestions = [
-    'Individual',
+    'Individual Stoves',
     'Commercial',
   
   ];
@@ -119,7 +119,7 @@ const Header = (prop) => {
           </div>
           <Brand />
           <div className={styles.actionContainers}>
-            <button
+            {/* <button
               aria-label="Search"
               className={`${styles.iconButton} ${styles.iconContainer}`}
               onClick={() => {
@@ -127,22 +127,22 @@ const Header = (prop) => {
               }}
             >
               <Icon symbol={'search'}></Icon>
-            </button>
-            <Link
+            </button> */}
+            {/* <Link
               aria-label="Favorites"
               href="/account/favorites"
               className={`${styles.iconContainer} ${styles.hideOnMobile}`}
             >
               <Icon symbol={'heart'}></Icon>
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               aria-label="Orders"
               href={isAuth() ? '/login' : '/account/orders/'}
               className={`${styles.iconContainer} ${styles.hideOnMobile}`}
             >
               <Icon symbol={'user'}></Icon>
-            </Link>
-            <button
+            </Link> */}
+            {/* <button
               aria-label="Cart"
               className={`${styles.iconButton} ${styles.iconContainer} ${styles.bagIconContainer}`}
               onClick={() => {
@@ -154,15 +154,15 @@ const Header = (prop) => {
               <div className={styles.bagNotification}>
                 <span>1</span>
               </div>
-            </button>
-            <div className={styles.notificationContainer}>
+            </button> */}
+            {/* <div className={styles.notificationContainer}>
               <AddNotification openCart={() => setShowMiniCart(true)} />
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* search container */}
-        <div
+        {/* <div
           className={`${styles.searchContainer} ${
             showSearch === true ? styles.show : styles.hide
           }`}
@@ -202,7 +202,7 @@ const Header = (prop) => {
             }}
             className={styles.backdrop}
           ></div>
-        </div>
+        </div> */}
       </Container>
 
       {/* menu container */}
