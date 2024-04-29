@@ -27,7 +27,7 @@ const Layout = ({ props, children, disablePaddingBottom = false }) => {
         />
       </Helmet>
 
-     <Header />
+     {/* <Header /> */}
       <main
         className={`${styles.main} ${
           disablePaddingBottom === true ? styles.disablePaddingBottom : ''
@@ -35,7 +35,7 @@ const Layout = ({ props, children, disablePaddingBottom = false }) => {
       >
         {children}
       </main>
-         <Footer />
+         {/* <Footer /> */}
      
     </>
   );

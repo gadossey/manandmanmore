@@ -1,0 +1,90 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\MITWORK\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin\;C:\Users\MITWORK\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\MITWORK\AppData\Local\Programs\Python\Python312\;C:\Users\MITWORK\AppData\Local\Programs\Python\Launcher\;C:\Users\MITWORK\AppData\Local\Microsoft\WindowsApps;C:\Users\MITWORK\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\MITWORK\AppData\Local\GitHubDesktop\bin;C:\Users\MITWORK\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\MITWORK\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.19.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-beta.40.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (node:events:631:28)
+      at ClientRequest.emit (node:events:517:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:847:9)
+      at Object.onceWrapper (node:events:631:28)
+      at TLSSocket.emit (node:events:529:35)
+      at Socket._onTimeout (node:net:598:8)
+      at listOnTimeout (node:internal/timers:569:17)
+      at process.processTimers (node:internal/timers:512:7)
+
+npm manifest: 
+  {
+    "name": "gatsby-ecommerce-theme",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Man and Man Enterprise",
+    "author": "MITWORK GHANA LIMITED",
+    "keywords": [
+      "gatsby"
+    ],
+    "scripts": {
+      "develop": "gatsby develop",
+      "start": "gatsby develop -p 5000",
+      "build": "gatsby build",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
+      "plop": "plop"
+    },
+    "dependencies": {
+      "@emotion/react": "^11.11.3",
+      "@emotion/styled": "^11.11.0",
+      "@mui/material": "^5.15.7",
+      "@netlify/plugin-gatsby": "^3.8.0",
+      "cypress": "^10.0.3",
+      "gatsby": "^5.13.3",
+      "gatsby-plugin-feed": "^5.13.1",
+      "gatsby-plugin-image": "^3.13.1",
+      "gatsby-plugin-manifest": "^5.13.1",
+      "gatsby-plugin-sharp": "^5.13.1",
+      "gatsby-plugin-styled-components": "^6.13.1",
+      "gatsby-plugin-web-font-loader": "^1.0.4",
+      "gatsby-remark-copy-linked-files": "^6.13.1",
+      "gatsby-remark-images": "^7.13.1",
+      "gatsby-remark-katex": "^7.13.1",
+      "gatsby-remark-mermaid": "^4.0.0",
+      "gatsby-remark-prismjs": "^7.13.1",
+      "gatsby-remark-responsive-iframe": "^6.13.1",
+      "gatsby-remark-smartypants": "^6.13.1",
+      "gatsby-source-filesystem": "^5.13.1",
+      "gatsby-transformer-remark": "^6.13.1",
+      "gatsby-transformer-sharp": "^5.13.1",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "react-helmet": "^6.1.0",
+      "react-icons": "^5.0.1",
+      "react-slick": "^0.30.0",
+      "styled-components": "^6.1.8"
+    },
+    "devDependencies": {
+      "@types/react-helmet": "^6.1.11",
+      "gatsby-plugin-netlify": "^5.0.0",
+      "netlify-plugin-cypress": "~2.2.0",
+      "plop": "^3.0.5",
+      "prettier": "^2.6.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
