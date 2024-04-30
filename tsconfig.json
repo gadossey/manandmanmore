@@ -5,11 +5,11 @@
     "jsx": "preserve",
     "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
     "moduleResolution": "node",
-    "allowJs": true,
+    "allowJs": true, // Allow compilation of JavaScript files
     "noEmit": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false, // Set to false to ensure all declaration files are checked
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,

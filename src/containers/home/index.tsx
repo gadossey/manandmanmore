@@ -1,0 +1,200 @@
+import * as React from "react";
+import SEO from '../../components/seo'; // Update this path
+import RomanticBlogWrapper from "./style";
+
+import IconsContainer from "./profile-grid";
+import SimpleSwiper from "./post-slider";
+import ProfilePost from "./profile";
+import OurPartners from "./ourpartners";
+import InstagramShowcase from "../instagram-showcase";
+import WhyManandMAn from "./WhyManandMAn";
+
+type RomanticBlogProps = {};
+
+const RomanticBlog: React.FunctionComponent<RomanticBlogProps> = (props) => {
+  return (
+    <>
+     <SEO
+  title="MAN AND MAN ENTERPRISE targets includes homes, restaurants, peri-urban and rural areas where charcoal and fire wood is predominantly the source of fuel."
+  description="MAN AND MAN ENTERPRISE targets includes homes, restaurants, peri-urban and rural areas where charcoal and fire wood is predominantly the source of fuel."
+  lang="en"
+  meta={[]}
+  keywords={[
+    "man and man enterprise",
+    "charcoal",
+    "fire wood",
+    "rural areas",
+    "homes",
+    "restaurants",
+    "peri-urban areas",
+    "energy source",
+    "sustainable energy",
+    "renewable energy",
+    "clean energy",
+    "affordable energy",
+    "energy for homes",
+    "energy for restaurants",
+    "rural energy solutions",
+    "energy services",
+    "energy supply",
+    "rural energy",
+    "local energy solutions",
+    "local energy supply",
+    "ecological energy",
+    "efficient energy",
+    "green energy",
+    "bioenergy",
+    "biomass energy",
+    "energy business",
+    "energy industry",
+    "energy technology",
+    "energy innovation",
+    "energy sustainability",
+    "sustainable living",
+    "sustainable home energy",
+    "clean cooking",
+    "renewable fuel",
+    "biofuel",
+    "biomass fuel",
+    "energy-saving",
+    "energy company",
+    "energy sector",
+    "energy in Africa",
+    "Ghana energy",
+    "wood fuel",
+    "sustainable fuel",
+    "sustainable charcoal",
+    "clean burning fuel",
+    "clean cooking solutions",
+    "rural cooking solutions",
+    "home cooking solutions",
+    "restaurant cooking solutions",
+    "energy efficiency",
+    "energy solutions",
+    "sustainable cooking",
+    "eco-friendly energy",
+    "eco-friendly fuel",
+    "eco-friendly cooking",
+    "sustainable energy services",
+    "renewable energy services",
+    "clean energy services",
+    "affordable energy services",
+    "residential energy solutions",
+    "commercial energy solutions",
+    "restaurant energy solutions",
+    "industrial energy solutions",
+    "sustainable energy technologies",
+    "renewable energy technologies",
+    "bioenergy technologies",
+    "biomass energy technologies",
+    "Ghana energy services",
+    "Ghana energy solutions",
+    "Ghana energy technologies",
+    "Ghana renewable energy",
+    "Ghana sustainable energy",
+    "Ghana clean energy",
+    "Ghana biomass energy",
+    "Ghana bioenergy",
+    "Ghana energy sector",
+    "Ghana energy industry",
+    "Ghana energy supply",
+    "Ghana energy company",
+    "Ghana energy providers",
+    "Ghana energy businesses",
+    "Ghana energy market",
+    "Ghana energy firms",
+    "Ghana energy policy",
+    "Ghana energy infrastructure",
+    "Ghana energy systems",
+    "Ghana energy resources",
+    "Ghana energy savings",
+    "Ghana energy consumption",
+    "Ghana energy generation",
+    "Ghana energy transition",
+    "Ghana energy production",
+    "Ghana energy strategy",
+    "Ghana energy regulation",
+    "Ghana energy environment",
+    "Ghana energy sustainability",
+    "Ghana energy investment",
+    "Ghana energy development",
+    "Ghana energy transformation",
+    "Ghana energy management",
+    "Ghana energy innovation",
+    "Ghana energy research",
+    "Ghana energy conservation",
+    "Ghana energy projects",
+    "Ghana energy challenges",
+    "Ghana energy opportunities",
+    "Ghana energy future",
+    "Ghana energy potential",
+    "Ghana energy prospects",
+    "Ghana energy plans",
+    "Ghana energy goals",
+    "Ghana energy trends",
+    "Ghana energy initiatives",
+    "Ghana energy impact",
+    "Ghana energy growth",
+    "Ghana energy changes",
+    "Ghana energy progress",
+    "Ghana energy improvements",
+    "Ghana energy advantages",
+    "Ghana energy benefits",
+    "Ghana energy standards",
+    "Ghana energy solutions company",
+    "Ghana energy services company",
+    "Ghana energy technology company",
+    "Ghana energy production company",
+    "Ghana energy supply company",
+    "Ghana energy consulting company",
+    "Ghana energy management company",
+    "Ghana energy engineering company",
+    "Ghana energy infrastructure company",
+    "Ghana energy investment company",
+    "Ghana energy development company",
+    "Ghana energy systems company",
+    "Ghana energy projects company",
+    "Ghana energy research company",
+    "Ghana energy conservation company",
+    "Ghana energy innovation company",
+    "Ghana energy resources company",
+    "Ghana energy savings company",
+    "Ghana energy transition company",
+    "Ghana energy transformation company",
+    "Ghana energy strategy company",
+    "Ghana energy regulation company",
+    "Ghana energy environment company",
+    "Ghana energy sustainability company",
+    "Ghana energy challenges company",
+    "Ghana energy opportunities company",
+    "Ghana energy future company",
+    "Ghana energy potential company",
+    "Ghana energy prospects company",
+    "Ghana energy plans company",
+    "Ghana energy goals company",
+    "Ghana energy trends company",
+    "Ghana energy initiatives company",
+    "Ghana energy impact company",
+    "Ghana energy growth company",
+    "Ghana energy changes company",
+    "Ghana energy progress company",
+    "Ghana energy improvements company",
+    "Ghana energy advantages company",
+    "Ghana energy benefits company",
+    "Ghana energy standards company"
+  ]}
+/>
+
+      <RomanticBlogWrapper {...props}>
+        {/* <WhyManandMAn /> */}
+        <SimpleSwiper />
+        <IconsContainer />
+        <ProfilePost />
+        <OurPartners />
+        <InstagramShowcase/>
+      </RomanticBlogWrapper>
+    </>
+  );
+};
+
+export default RomanticBlog;

@@ -1,0 +1,237 @@
+I want to style RightComponent in such a way that it is professionally done and the content should fit the screen without scrolling 
+2. i also want increase the size of the qr scanner camera view to fit the whole of the RightComponent perfectly and all other contente related should show on the screen , so it will  look like the camera is at thebackground.
+
+Please ensure the QR scanner camera filled the entire RightComponent 
+import React, { useState, useEffect, useRef } from 'react';
+import { QrReader } from 'react-qr-reader';
+import { v4 as uuidv4 } from 'uuid';
+import { Box, CircularProgress, IconButton, Typography, Button, Backdrop, Snackbar, Switch, TextField } from '@mui/material';
+import { FaCamera, FaLightbulb } from 'react-icons/fa';
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../api/firebase';
+import PageLayout from './Layout/PageLayout';
+
+const LeftComponent = () => (
+  <Typography variant="h5" align="center">
+    Scanning Code no
+  </Typography>
+);
+
+const SerialNumberComponent = ({ handleNext, handleBack, accessPoint }) => {
+  const [showQrReader, setShowQrReader] = useState(false);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+  const [isFrontCamera, setIsFrontCamera] = useState(false);
+  const [isFlashlightOn, setIsFlashlightOn] = useState(false);
+  const [serialNumber, setSerialNumber] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [scanning, setScanning] = useState(false);
+  const [scanResult, setScanResult] = useState('');
+  const qrReaderRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobileDevice = window.innerWidth <= 768;
+      setIsMobileDevice(isMobileDevice);
+      setShowQrReader(isMobileDevice);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    let timer;
+
+    if (showQrReader && !isRefreshing) {
+      timer = setTimeout(() => {
+        setIsRefreshing(true);
+      }, 30000);
+    }
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [showQrReader, isRefreshing]);
+
+  const handleScan = async (data) => {
+    if (data) {
+      console.log('QR Code Scanned:', data);
+      setSerialNumber(data);
+      setError('QR Code Scanned. Processing...');
+      setOpenSnackbar(true);
+      setScanning(false); // Update the scanning status
+      setScanResult(data); // Store the scan result
+      await handleSerialCheck();
+    }
+  };
+
+  const handleError = (err) => {
+    console.error(err);
+  };
+
+  const handleRefreshClick = () => {
+    setScanning(false);
+    setScanResult('');
+    setIsRefreshing(false);
+    qrReaderRef.current?.openImageDialog();
+  };
+
+  const handleCameraToggle = () => {
+    setIsFrontCamera((prevIsFrontCamera) => !prevIsFrontCamera);
+  };
+
+  const handleFlashlightToggle = () => {
+    setIsFlashlightOn((prevIsFlashlightOn) => !prevIsFlashlightOn);
+  };
+
+  const videoId = uuidv4();
+
+  const handleSerialCheck = async () => {
+    setScanning(true);
+    setIsLoading(true);
+
+    try {
+      console.log('Checking Serial Number:', serialNumber);
+
+      const docRef = doc(db, 'stoves', serialNumber);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        console.log('Serial Number Found:', serialNumber);
+        handleNext(serialNumber);
+      } else {
+        console.log('Serial Number Not Found:');
+        setError('Stove serial does not exist. Please enter a valid serial number.');
+        setOpenSnackbar(true);
+      }
+    } catch (err) {
+      console.error(err);
+      setError('An error occurred while checking the stove serial. Please try again.');
+      setOpenSnackbar(true);
+    }
+
+    setIsLoading(false);
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
+  const isFlashlightAvailable = true;
+
+  const RightComponent = () => (
+   <>
+      <Box textAlign="center" marginTop={2}>
+        <Typography variant="h5">Serial Number</Typography>
+      </Box>
+
+      {isMobileDevice && (
+        <Box display="flex" justifyContent="center" marginTop={2}>
+          <Switch
+            checked={showQrReader}
+            onChange={() => setShowQrReader((prevState) => !prevState)}
+            name="toggleScanner"
+            color="primary"
+          />
+          <Typography>{showQrReader ? 'Switch to Manual Entry' : 'Switch to QR Scanner'}</Typography>
+        </Box>
+      )}
+
+      {showQrReader && isMobileDevice && !scanning && (
+        <Box display="flex" justifyContent="center" alignItems="center" height="70vh" width="100%" marginTop={2}>
+          <Box position="relative" width="100%" height="100%">
+            <QrReader
+              ref={qrReaderRef}
+              delay={300}
+              constraints={{ facingMode: isFrontCamera ? 'user' : 'environment' }}
+              onError={handleError}
+              onResult={handleScan}
+              style={{ width: '100%', height: '100%' }}
+              videoId={videoId}
+              scanDelay={500}
+              ViewFinder={() => <div>Scanning for serial Number...</div>}
+            />
+            {isRefreshing && (
+              <Box position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" zIndex="3">
+                <Button variant="contained" onClick={handleRefreshClick}>
+                  Time expired. Click here to refresh
+                </Button>
+              </Box>
+            )}
+          </Box>
+        </Box>
+      )}
+
+      {scanning && (
+        <Typography variant="body1">Scanning...</Typography>
+      )}
+
+      {scanResult && (
+        <>
+          <Typography variant="body1">Scan Result: {scanResult}</Typography>
+          {isLoading ? (
+            <Typography variant="body1">Processing...</Typography>
+          ) : (
+            <Typography variant="body1">{error}</Typography>
+          )}
+        </>
+      )}
+
+      {(!showQrReader || !isMobileDevice || scanning) && (
+        <Box display="flex" justifyContent="center" marginTop={2}>
+          <Box width="100%">
+            <TextField
+              type="text"
+              value={serialNumber}
+              onChange={(e) => setSerialNumber(e.target.value)}
+              fullWidth
+              label="Serial Number"
+            />
+          </Box>
+        </Box>
+      )}
+
+      <Box display="flex" justifyContent="center" marginTop={2}>
+        <IconButton onClick={handleCameraToggle}>
+          <FaCamera />
+        </IconButton>
+        <IconButton onClick={handleFlashlightToggle} disabled={!isFlashlightAvailable}>
+          <FaLightbulb />
+        </IconButton>
+      </Box>
+
+      <Box display="flex" justifyContent="center" marginTop={2}>
+        <Button variant="contained" onClick={handleSerialCheck} disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Check'}
+        </Button>
+      </Box>
+
+      <Box display="flex" justifyContent="center" marginTop={2}>
+        <Button variant="contained" onClick={handleBack}>
+          Back
+        </Button>
+      </Box>
+
+      <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        open={openSnackbar}
+        onClose={handleCloseSnackbar}
+        message={error}
+        autoHideDuration={6000}
+      />
+      </>
+  );
+
+  return (
+    <PageLayout LeftComponent={LeftComponent} RightComponent={RightComponent} />
+  );
+};
+
+export default SerialNumberComponent;

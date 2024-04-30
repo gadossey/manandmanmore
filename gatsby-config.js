@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Improved Biomass Cooking in Africa`,
@@ -7,23 +11,26 @@ module.exports = {
     siteUrl: `https://manandmanenterprise.com`,
   },
   plugins: [
+   
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-styled-components`,
       options: {
-        feeds: [],
+        minify: false, // Breaks styles if not set to false
+      },
+    },
+   
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `MAN AND MAN ENTERPRISE`,
-        short_name: `Man and Man`,
-        description: `Improved Biomass Cooking in Africa`,
-        start_url: `/`,
-        background_color: `#00ff00`,
-        theme_color: `#663399`,
-        display: `standalone`,
-        icon: 'src/assets/favicon.png',
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
       },
     },
     {
@@ -62,17 +69,15 @@ module.exports = {
           {
             resolve: `gatsby-remark-smartypants`,
           },
-         
+          {
+            resolve: `gatsby-remark-reading-time`,
+          },
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        minify: false, // Breaks styles if not set to false
-      },
+      resolve: `gatsby-plugin-image`,
     },
-  
     {
       resolve: `gatsby-transformer-sharp`,
     },
@@ -80,7 +85,44 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
     },
     {
-      resolve: `gatsby-plugin-image`,
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID, // `ADD YOUR TRACKING ID HERE`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `MAN AND MAN ENTERPRISE`,
+        short_name: `Man and Man`,
+        description: `Improved Biomass Cooking in Africa`,
+        start_url: `/`,
+        background_color: `#00ff00`,
+        theme_color: `#663399`,
+        display: `standalone`,
+        icon: `content/assets/favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+    },
+    {
+      resolve: `gatsby-plugin-react-helmet`,
+    },
+    {
+      resolve: `gatsby-plugin-lodash`,
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: process.env.MAILCHIMP_ENDPOINT, // add your MC list endpoint here; see instructions below
+      },
     },
     {
       resolve: `gatsby-plugin-web-font-loader`,
@@ -93,6 +135,5 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-netlify',
   ],
 };
