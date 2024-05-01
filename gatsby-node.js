@@ -65,20 +65,11 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
-    
-    // Check if cover is an object before accessing subfields
-    const cover = post.node.frontmatter.cover;
-    let coverPublicURL, coverChildImageSharp;
-    if (typeof cover === 'object') {
-      coverPublicURL = cover.publicURL;
-      coverChildImageSharp = cover.childImageSharp?.gatsbyImageData({
-        layout: FULL_WIDTH,
-        placeholder: BLURRED,
-        formats: [AUTO, WEBP, AVIF],
-      });
-    }
 
-    createPage({
+    const coverPublicURL = post.node.frontmatter.cover?.publicURL; // Handle potential missing cover field
+
+
+   createPage({
       path: post.node.fields.slug,
       component: blogPost,
       context: {
@@ -87,6 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
         tag: post.node.frontmatter.tags,
         category: post.node.frontmatter.categories,
+        coverPublicURL,
       },
     });
   });
