@@ -11,8 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const pdfPage = path.resolve(`./src/pages/pdfs.jsx`); // Path to your PDF page component
 
   const result = await graphql(
-    `
-      {
+    `{
         allMarkdownRemark(
           sort: { frontmatter: { date: DESC } }
           limit: 1000
@@ -66,6 +65,18 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
+    
+    // Check if cover is an object before accessing subfields
+    const cover = post.node.frontmatter.cover;
+    let coverPublicURL, coverChildImageSharp;
+    if (typeof cover === 'object') {
+      coverPublicURL = cover.publicURL;
+      coverChildImageSharp = cover.childImageSharp?.gatsbyImageData({
+        layout: FULL_WIDTH,
+        placeholder: BLURRED,
+        formats: [AUTO, WEBP, AVIF],
+      });
+    }
 
     createPage({
       path: post.node.fields.slug,
