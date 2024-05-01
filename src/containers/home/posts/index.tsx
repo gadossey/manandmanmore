@@ -35,9 +35,7 @@ const Posts: React.FunctionComponent<PostsProps> = () => {
 					node {
 						fields {
 							slug
-							readingTime {
-								text
-							}
+							
 						}
 						frontmatter {
 							date(formatString: "MMMM DD, YYYY")
