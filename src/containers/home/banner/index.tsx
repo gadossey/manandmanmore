@@ -14,7 +14,7 @@ const Banner: React.FunctionComponent<BannerProps> = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { frontmatter: { date: DESC } }
         limit: 6
         filter: { frontmatter: { tags: { eq: "trending" } } }
       ) {

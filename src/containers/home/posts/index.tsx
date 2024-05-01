@@ -26,7 +26,7 @@ const Posts: React.FunctionComponent<PostsProps> = () => {
 	const data = useStaticQuery(graphql`
 		query {
 			allMarkdownRemark(
-				sort: { fields: [frontmatter___date], order: DESC }
+				sort: { frontmatter: { date: DESC } }
 				skip: 1
 				filter: { frontmatter: { tags: { ne: "sustainable" } } }
 			) {

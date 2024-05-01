@@ -9,7 +9,7 @@ const BannerPosts: React.FunctionComponent<BannerPostsProps> = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { frontmatter: { date: DESC } }
         limit: 1
       ) {
         totalCount
