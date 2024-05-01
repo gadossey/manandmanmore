@@ -1,5 +1,5 @@
 [build]
-  command = "--force && gatsby build"
+  command = "gatsby build --force"
   functions = "netlify/functions"
   publish = "public"
 
