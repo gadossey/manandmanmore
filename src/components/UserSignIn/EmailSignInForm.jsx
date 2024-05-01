@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import firebase from "../../api/firebase";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/system";
 import { TextField, Button, Typography } from "@mui/material";
 import { navigate } from "gatsby"; // updated import statement
 

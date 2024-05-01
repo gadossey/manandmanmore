@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 import { navigate } from "gatsby"
-import { useTheme } from "@mui/styles"
+import { useTheme } from "@mui/system"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import { ColorModeContext } from "../../../../theme" // Adjust the path accordingly

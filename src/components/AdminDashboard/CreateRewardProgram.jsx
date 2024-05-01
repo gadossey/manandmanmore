@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { db } from '../../api/firebase';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/system';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Loading from '../Loading';

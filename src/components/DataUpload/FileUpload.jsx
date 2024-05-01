@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import {Box, CircularProgress, Grid, Typography, Button, Paper, Divider } from "@mui/material";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/system";
 
 const useStyles = makeStyles((theme) => ({
   dropzone: {

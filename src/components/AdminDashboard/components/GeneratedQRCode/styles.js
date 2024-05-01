@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   labelContainer: {

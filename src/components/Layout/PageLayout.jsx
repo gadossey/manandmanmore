@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/styles';
+import { useTheme } from '@mui/system';
 
 const styles = {
   container: {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Button, Fade, useMediaQuery, Box } from "@mui/material";
-import { useTheme } from '@mui/styles';
+import { useTheme } from '@mui/system';
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import PageLayout from "./Layout/PageLayout";
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';

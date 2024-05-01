@@ -1,5 +1,5 @@
 import { createContext, useState, useMemo } from "react";
-import { createTheme } from "@mui/styles";
+import { createTheme } from "@mui/system";
 
 // color design tokens export
 export const tokens = (mode) => ({

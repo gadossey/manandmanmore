@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Grid, Container } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/system';
 import UserTable from '../AdminDashboard/UserTable';
 
 import FeaturePlugins from './FeaturePlugins';

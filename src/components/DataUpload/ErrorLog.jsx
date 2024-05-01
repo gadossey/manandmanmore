@@ -7,7 +7,7 @@ import {
   ListItemText,
   Button,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/system";
 
 const useStyles = makeStyles((theme) => ({
   errorLogContainer: {

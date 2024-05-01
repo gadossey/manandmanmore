@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { QrReader } from "react-qr-reader";
 import { v4 as uuidv4 } from "uuid";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@mui/system";
 import {
   Box,
   Typography,

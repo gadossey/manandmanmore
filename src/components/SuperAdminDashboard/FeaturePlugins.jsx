@@ -1,7 +1,7 @@
 // src/components/SuperAdminDashboard/FeaturePlugins.js
 
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/system';
 import { 
   List, ListItem, ListItemText, ListSubheader, Button, Grid
 } from '@mui/material';
