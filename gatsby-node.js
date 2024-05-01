@@ -26,7 +26,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 tags
                 categories
                 cover {
-                  publicURL
                   childImageSharp {
                     gatsbyImageData(
                       layout: FULL_WIDTH
