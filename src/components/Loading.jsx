@@ -1,7 +1,7 @@
 // src/components/Loading.js
 import React from "react";
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { Box } from '@material-ui/core';
+import CircularProgress from '@mui/material/CircularProgress';
+import { Box } from '@mui/material';
 
 const Loading = () => {
   return (

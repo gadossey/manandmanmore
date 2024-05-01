@@ -1,8 +1,8 @@
 // src/components/SuperAdminDashboard/SuperAdminPanel.js
 
 import React from 'react';
-import { Grid, Container } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Container } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import UserTable from '../AdminDashboard/UserTable';
 
 import FeaturePlugins from './FeaturePlugins';

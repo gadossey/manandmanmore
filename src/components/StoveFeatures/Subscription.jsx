@@ -3,8 +3,8 @@
 import React from 'react';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import firebase from '../../api/firebase';
-import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Paper, Typography } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   paper: {

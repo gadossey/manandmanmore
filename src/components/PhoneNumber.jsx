@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Typography, TextField, Button } from '@material-ui/core';
+import { Container, Typography, TextField, Button } from '@mui/material';
 import Alert from '@material-ui/lab/Alert';
 
 const PhoneNumber = ({ handleNext, handleBack, phoneNumber, setPhoneNumber }) => {

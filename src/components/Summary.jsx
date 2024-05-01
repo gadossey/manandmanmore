@@ -1,6 +1,6 @@
 import React from 'react';
 import { NotFoundWrapper, Container, ViewTitle, ViewContent, Button, BackButton } from './SharedComponents';
-import { Typography, makeStyles } from '@material-ui/core';
+import { Typography, makeStyles } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   content: {

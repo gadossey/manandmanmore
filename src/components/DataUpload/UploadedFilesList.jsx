@@ -1,6 +1,6 @@
 // UploadedFiles.js
 import React from "react";
-import { List, ListItem, ListItemText } from "@material-ui/core";
+import { List, ListItem, ListItemText } from "@mui/material";
 
 function UploadedFiles({ uploadedFiles, currentFileId, onFileClick }) {
   return (

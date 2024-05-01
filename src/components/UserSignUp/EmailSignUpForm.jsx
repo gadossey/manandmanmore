@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../api/firebase';
-import { Button, TextField, Typography } from '@material-ui/core';
+import { Button, TextField, Typography } from '@mui/material';
 
 const EmailSignUpForm = () => {
   const [email, setEmail] = useState('');

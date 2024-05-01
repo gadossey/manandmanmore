@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 import { RecaptchaVerifier } from 'firebase/auth';
 import { auth, signInWithPhoneNumberAuth } from '../../api/firebase';
-import { Button, TextField, Typography } from '@material-ui/core';
+import { Button, TextField, Typography } from '@mui/material';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 const PhoneNumberAuthForm = () => {

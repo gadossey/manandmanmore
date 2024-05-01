@@ -10,7 +10,7 @@ import {
   TableHead,
   TableRow,
   Paper,
-} from "@material-ui/core";
+} from "@mui/material";
 import useStyles from "./styles";
 
 const PRODUCT_INFORMATION = [

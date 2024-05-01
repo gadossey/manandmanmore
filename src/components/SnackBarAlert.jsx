@@ -1,6 +1,6 @@
 // UploadSnackbar.js
 
-import { Snackbar, Alert } from "@material-ui/core";
+import { Snackbar, Alert } from "@mui/material";
 import React, { useContext } from "react";
 import { UploadContext } from "./Upload";
 

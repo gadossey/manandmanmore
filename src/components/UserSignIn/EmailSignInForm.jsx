@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import firebase from "../../api/firebase";
-import { makeStyles } from "@material-ui/core/styles";
-import { TextField, Button, Typography } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
+import { TextField, Button, Typography } from "@mui/material";
 import { navigate } from "gatsby"; // updated import statement
 
 const useStyles = makeStyles((theme) => ({

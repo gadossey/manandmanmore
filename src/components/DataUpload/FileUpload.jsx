@@ -1,9 +1,9 @@
 // UploadFile.js
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
-import {Box, CircularProgress, Grid, Typography, Button, Paper, Divider } from "@material-ui/core";
+import {Box, CircularProgress, Grid, Typography, Button, Paper, Divider } from "@mui/material";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   dropzone: {

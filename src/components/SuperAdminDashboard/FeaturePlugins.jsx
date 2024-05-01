@@ -1,10 +1,10 @@
 // src/components/SuperAdminDashboard/FeaturePlugins.js
 
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import { 
   List, ListItem, ListItemText, ListSubheader, Button, Grid
-} from '@material-ui/core';
+} from '@mui/material';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebase from '../../api/firebase';
 
