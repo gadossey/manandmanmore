@@ -22,7 +22,6 @@ interface PostCardProps {
 	tags?: [];
 	categories?: [];
 	className?: string;
-	readTime?: string;
 }
 
 const PostCard: React.FunctionComponent<PostCardProps> = ({
@@ -34,7 +33,6 @@ const PostCard: React.FunctionComponent<PostCardProps> = ({
 	tags,
 	categories,
 	className,
-	readTime,
 	...props
 }) => {
 	// Add all classs to an array

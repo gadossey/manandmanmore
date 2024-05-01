@@ -37,7 +37,7 @@ const BlogList = (props: any) => {
 									url={node.fields.slug}
 									date={node.frontmatter.date}
 									tags={node.frontmatter.tags}
-									readTime={node.fields.readingTime.text}
+									// readTime={node.fields.readingTime.text}
 								/>
 							</PostCol>
 						);

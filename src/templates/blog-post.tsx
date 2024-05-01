@@ -82,19 +82,18 @@ const BlogPostTemplate = ({ pageContext, ...props }: any) => {
 					className={post.frontmatter.cover == null ? 'center' : ''}
 				>
 					<PostShare>
-						<FacebookShareButton url={shareUrl} quote={post.excerpt}>
+						<FacebookShareButton url={shareUrl} quote={post.excerpt} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
 							<IoLogoFacebook size='23px' />
 						</FacebookShareButton>
-						<TwitterShareButton url={shareUrl} title={title}>
+						<TwitterShareButton url={shareUrl} title={title} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
 							<IoLogoTwitter size='23px' />
 						</TwitterShareButton>
-						<LinkedinShareButton url={shareUrl} title={title}>
+						<LinkedinShareButton url={shareUrl} title={title}  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
 							<IoLogoLinkedin size='23px' />
 						</LinkedinShareButton>
 						<RedditShareButton
 							url={shareUrl}
-							title={`${post.frontmatter.title}`}
-						>
+							title={`${post.frontmatter.title}`} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}						>
 							<IoLogoReddit size='23px' />
 						</RedditShareButton>
 					</PostShare>
