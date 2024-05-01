@@ -63,7 +63,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
-        group(field: frontmatter___categories) {
+        group(field: {frontmatter: {categories: SELECT}}) {
           fieldValue
         }
       }
